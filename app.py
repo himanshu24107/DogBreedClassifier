@@ -19,7 +19,7 @@ def main():
 
     if uploaded_image is not None:
         image = Image.open(uploaded_image)
-        #st.image(image, caption='Uploaded Image', use_column_width=True)
+        st.image(image, caption='Uploaded Image', use_column_width=False)
         processed_image = preprocess_image(image)
         prediction = model.predict(processed_image)
         predicted_class = np.argmax(prediction)
