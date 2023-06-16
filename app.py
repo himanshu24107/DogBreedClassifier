@@ -5,7 +5,7 @@ import numpy as np
 
 
 model = tf.keras.models.load_model('keras_model.h5')
-st.text("Available Dog breed: American Hunting Dog, Cardigen, Poodle, Maxican Hairless, Dingo, Dhole")
+
 def preprocess_image(image):
     img = image.resize((224, 224))  # Resize the image to match the input size of the model
     img = np.array(img)  # Convert the image to a numpy array
@@ -15,6 +15,7 @@ def preprocess_image(image):
 
 def main():
     st.title("Dog Breed Classifier")
+    st.text("Available Dog breed: American Hunting Dog, Cardigen, Poodle, Maxican Hairless, Dingo, Dhole")
     uploaded_image = st.file_uploader("Choose an image", type=["jpg", "jpeg", "png"])
 
     if uploaded_image is not None:
